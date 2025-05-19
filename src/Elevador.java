@@ -6,20 +6,41 @@ public class Elevador {
         private int Capacidade;
         private int NumeroPessoas;
 
-        public void Elevador(int andarAtual, int numeroAndares, int capacidade, int numeroPessoas) {
+        public void Inicializar(int numeroAndares, int Capacidade) {
 
-           this. AndarAtual = andarAtual;
             this.NumeroAndares = numeroAndares;
-            this.Capacidade = capacidade;
-            this.NumeroPessoas = numeroPessoas;
+            this.Capacidade = Capacidade;
+            this.NumeroPessoas = 0; 
+            this. AndarAtual = 0;
+
+        }
+        public void entrar(){
+
+            if (NumeroPessoas<Capacidade) {
+                NumeroPessoas++;   
+            }
         }
 
-        public Inicializar(int Capacidade) {
-        this.Capacidade = Capacidade;
-        this.NumeroPessoas = 0;
-    }
+        public void sair(){
 
+            if (NumeroPessoas > 0) {
+                NumeroPessoas--;     
+            }
+        }
 
+        public void subir(){
+
+            if (AndarAtual < NumeroAndares) {
+                 AndarAtual++;
+          } 
+        }
+
+        public void descer(){
+
+            if (AndarAtual > 0) {
+                AndarAtual--;   
+            }
+        }
         public int getAndarAtual() {
             return AndarAtual;
         }
